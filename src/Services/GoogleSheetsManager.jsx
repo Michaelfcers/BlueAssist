@@ -1,5 +1,5 @@
 class GoogleSheetsManager {
-    constructor(spreadsheetId = '1L2Tc_8boLSmat0m5Q4gJPGv73GSJKR0ewiDA8m-oBfo', apiKey = 'AIzaSyBBKHL86Xj8YfskdmeHWVdGTy2uAHflAXI') {
+    constructor(spreadsheetId = '1ihPkLNTwwVlky9Uq5uoFvRxEW2Ml0hx74HQkeTSLaz0', apiKey = 'AIzaSyBBKHL86Xj8YfskdmeHWVdGTy2uAHflAXI') {
       this.SPREADSHEET_ID = spreadsheetId;
       this.API_KEY = apiKey;
     }
