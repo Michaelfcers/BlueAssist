@@ -11,7 +11,7 @@ BlueAssist is a robust mobile application built with React Native (Expo) designe
 ## ✨ Key Features
 
 *   **🔒 Secure Authentication:** Simple and secure login using employee ID (Cédula) and password, verified directly against your corporate records.
-*   **📍 GPS Location Tracking:**Automatically captures the user's location upon clock-in/out and generates a Google Maps link for verification.
+*   📍 **GPS Location Tracking:**Automatically captures the user's location upon clock-in/out and generates a Google Maps link for verification.
 *   **🕒 Smart Attendance System:**
     *   **Check-In / Check-Out:** Intuitive interface for daily attendance.
     *   **Overtime Calculation:** Automatically flags and calculates overtime hours (after 6:00 PM).
