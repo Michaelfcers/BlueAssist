@@ -9,40 +9,41 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7F8FA', // Light grey background for modern feel
     alignItems: 'center',
   },
-  darkModeButton: {
+  themeToggleButton: {
     position: 'absolute',
-    top: 50,
-    right: 30,
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    top: 55, // Lowered slightly for better safe area clearance
+    right: 25,
+    width: 48,
+    height: 48,
+    borderRadius: 24, // Perfect circle
+    backgroundColor: '#ffffff',
     justifyContent: 'center',
     alignItems: 'center',
-    zIndex: 10,
-    backgroundColor: 'rgba(255,255,255,0.9)',
+    zIndex: 50,
+    // Add distinct shadow for "floating" effect
     shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 4.65,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
     elevation: 8,
+    // Add a subtle border
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.1)',
   },
   headerContainer: {
-    marginTop: 80,
-    marginBottom: 10,
+    marginTop: 90,
+    marginBottom: 20,
     width: '100%',
     alignItems: 'center',
   },
   categoryContainer: {
     width: '100%',
-    marginVertical: 15,
+    marginVertical: 20,
   },
   categoryTitle: {
-    fontSize: 22,
-    fontWeight: '700',
-    color: '#333', // Dark text
+    fontSize: 24,
+    fontWeight: '800',
+    color: '#1a1a1a', // Darker black for better contrast
     marginBottom: 15,
     marginLeft: 10,
     letterSpacing: 0.5,
@@ -54,8 +55,8 @@ const styles = StyleSheet.create({
   },
   card: {
     flex: 0.48, // Two columns with gap
-    borderRadius: 20,
-    paddingVertical: 35,
+    borderRadius: 25,
+    paddingVertical: 40,
     paddingHorizontal: 15,
     alignItems: 'center',
     justifyContent: 'center',
@@ -65,46 +66,54 @@ const styles = StyleSheet.create({
       width: 0,
       height: 6,
     },
-    shadowOpacity: 0.15,
-    shadowRadius: 5,
-    minHeight: 160,
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    minHeight: 180,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.05)', // Subtle border for definition
   },
   cardText: {
     marginTop: 15,
-    fontSize: 16,
+    fontSize: 22, // Even larger
     color: '#ffffff',
-    fontWeight: '600',
+    fontWeight: '800',
     textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.2)', // Text shadow for readability
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
   },
   button: {
-    paddingVertical: 15,
-    paddingHorizontal: 25,
-    borderRadius: 16,
+    paddingVertical: 18,
+    paddingHorizontal: 30,
+    borderRadius: 18,
     alignItems: 'center',
     justifyContent: 'center',
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
+    fontSize: 18,
+    fontWeight: '700',
   },
   disabledButton: {
-    backgroundColor: '#E0E0E0',
-    opacity: 0.5,
+    // REMOVED backgroundColor override to keep the color
+    opacity: 0.4, // Just fade it out
+    transform: [{ scale: 0.95 }], // Slightly shrink to indicate disabled
     elevation: 0,
   },
   footerText: {
     position: 'absolute',
-    bottom: 25,
-    opacity: 0.6,
-    fontSize: 12,
-    fontWeight: '500',
+    bottom: 30,
+    opacity: 0.7,
+    fontSize: 13,
+    fontWeight: '600',
   },
   iconContainer: {
-    marginBottom: 5,
-    padding: 15,
-    backgroundColor: 'rgba(255,255,255,0.2)',
-    borderRadius: 50,
+    marginBottom: 10,
+    padding: 20,
+    backgroundColor: 'rgba(255,255,255,0.25)',
+    borderRadius: 60,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.3)', // Border for the icon circle
   }
 });
 

@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Text, View, StatusBar } from 'react-native';
+import { Text, View, StatusBar, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import UserContext from '../Services/UserContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -164,12 +164,13 @@ const MenuScreen = () => {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor={backgroundColor} />
 
       {/* Dark Mode Toggle */}
-      <CustomButton
-        style={[styles.darkModeButton, { backgroundColor: isDarkMode ? '#333' : '#fff' }]}
+      <TouchableOpacity
+        style={styles.themeToggleButton}
         onPress={() => setIsDarkMode(prevMode => !prevMode)}
+        activeOpacity={0.8}
       >
-        <Icon name={isDarkMode ? 'sun' : 'moon'} size={22} color={isDarkMode ? '#FFD700' : '#555'} />
-      </CustomButton>
+        <Icon name={isDarkMode ? 'sun' : 'moon'} size={26} color={isDarkMode ? '#FF8C00' : '#4A4A4A'} />
+      </TouchableOpacity>
 
       <View style={styles.headerContainer}>
         <Text style={[styles.categoryTitle, { fontSize: 28, marginBottom: 5, color: textColor }]}>Hola, {user.nombre || 'Usuario'}</Text>
@@ -187,7 +188,7 @@ const MenuScreen = () => {
               disabled={buttonState.button1}
             >
               <View style={styles.iconContainer}>
-                <Icon name="user-check" size={32} color={iconColor} />
+                <Icon name="user-check" size={45} color={iconColor} />
               </View>
               <Text style={styles.cardText}>Entrada</Text>
             </CustomButton>
@@ -198,7 +199,7 @@ const MenuScreen = () => {
               disabled={buttonState.button2}
             >
               <View style={styles.iconContainer}>
-                <Icon name="user-times" size={32} color={iconColor} />
+                <Icon name="user-times" size={45} color={iconColor} />
               </View>
               <Text style={styles.cardText}>Salida</Text>
             </CustomButton>
@@ -215,7 +216,7 @@ const MenuScreen = () => {
               disabled={buttonState.button3}
             >
               <View style={styles.iconContainer}>
-                <Icon name="toolbox" size={32} color={iconColor} />
+                <Icon name="toolbox" size={45} color={iconColor} />
               </View>
               <Text style={styles.cardText}>Entrada</Text>
             </CustomButton>
@@ -226,7 +227,7 @@ const MenuScreen = () => {
               disabled={buttonState.button4}
             >
               <View style={styles.iconContainer}>
-                <Icon name="truck-loading" size={32} color={iconColor} />
+                <Icon name="truck-loading" size={45} color={iconColor} />
               </View>
               <Text style={styles.cardText}>Salida</Text>
             </CustomButton>
