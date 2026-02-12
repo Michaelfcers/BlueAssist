@@ -22,15 +22,22 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.rodmifc.BlueAssist"
+      "package": "com.rodmifc.BlueAssist",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_NETWORK_STATE",
+        "INTERNET"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "c3b5e8ec-4272-4c4b-b9a2-c79495a96165"
+        "projectId": "5f2ba994-5f61-4ff4-b0ce-a08c3fb734b3"
       }
-    }
+    },
+    "owner": "michaellrodc"
   }
 }

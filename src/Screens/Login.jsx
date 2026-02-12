@@ -22,7 +22,7 @@ const Login = ({ onLoginSuccess }) => {
     setIsLoading(true);
     try {
       const googleSheetsManager = new GoogleSheetsManager();
-      const sheetData = await googleSheetsManager.fetchSheetData('Trabajadores!A2:B');
+      const sheetData = await googleSheetsManager.fetchSheetData('Trabajadores!A2:C');
 
       if (!Array.isArray(sheetData) || sheetData.length === 0) {
         Alert.alert('Error', 'Ocurrió un error al obtener los datos. Por favor, inténtalo de nuevo más tarde.');
@@ -32,9 +32,7 @@ const Login = ({ onLoginSuccess }) => {
       const user = sheetData.find((user) => user[0] === credentials.username && user[1] === credentials.password);
 
       if (user) {
-        const userData = { cedula: user[0] }; // Security: Do NOT store password
-        // If name is available in column C (index 2), use it. otherwise default.
-        // userData.nombre = user[2] || 'Usuario'; 
+        const userData = { cedula: user[0], nombre: user[2] || 'Usuario' };
 
         setUser({ ...userData, password: user[1] }); // Keep password in memory for current session only
         onLoginSuccess();

@@ -5,7 +5,7 @@ class GoogleSheetsManager {
   }
 
   async fetchSheetData() {
-    const range = 'Trabajadores!A2:B'; // Aquí especificamos el rango correcto
+    const range = 'Trabajadores!A2:C'; // Leemos hasta la columna C para obtener el nombre
     try {
       const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${this.SPREADSHEET_ID}/values/${range}?key=${this.API_KEY}`);
       if (!response.ok) {
@@ -14,7 +14,7 @@ class GoogleSheetsManager {
       const data = await response.json();
       return data.values;
     } catch (error) {
-      // console.error(error); // Security: Avoid logging raw errors
+      console.error("Google Sheets Error:", error);
       return 'Ocurrió un error al obtener los datos. Por favor, inténtalo de nuevo más tarde.';
     }
   }

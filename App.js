@@ -4,7 +4,9 @@ import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import UserContext from './src/Services/UserContext';
 import Login from './src/Screens/Login';
-import MenuScreen, { sendPendingData } from './src/Screens/MenuScreen';
+import QueueService from './src/Services/QueueService';
+import { startLocationTracking } from './src/Services/LocationService';
+import MenuScreen from './src/Screens/MenuScreen';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -14,15 +16,22 @@ export default function App() {
   const handleLoginSuccess = () => setIsLoggedIn(true);
 
   useEffect(() => {
+    // Intentar procesar cola y encender GPS
+    QueueService.processQueue();
+    startLocationTracking();
+
     const unsubscribeNetInfo = NetInfo.addEventListener(state => {
-      if (state.isConnected && state.isInternetReachable) sendPendingData();
+      if (state.isConnected && state.isInternetReachable) {
+        console.log("Internet detectado: Procesando cola...");
+        QueueService.processQueue();
+      }
     });
 
     return () => unsubscribeNetInfo();
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser, isDarkMode, setIsDarkMode }}>
+    <UserContext.Provider value={{ user, setUser, isDarkMode, setIsDarkMode, isLoggedIn, setIsLoggedIn }}>
       <View style={[styles.container, { backgroundColor: isDarkMode ? '#333' : '#fff' }]}>
         <StatusBar style="auto" />
         {isLoggedIn ? <MenuScreen /> : <Login onLoginSuccess={handleLoginSuccess} />}

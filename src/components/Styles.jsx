@@ -114,6 +114,95 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     borderWidth: 1,
     borderColor: 'rgba(255,255,255,0.3)', // Border for the icon circle
+  },
+  profileButton: {
+    position: 'absolute',
+    top: 55,
+    left: 25,
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: '#ffffff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 50,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+    elevation: 8,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.1)',
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    width: '85%',
+    backgroundColor: 'white',
+    borderRadius: 25,
+    padding: 30,
+    alignItems: 'center',
+    elevation: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+  },
+  modalTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 25,
+    color: '#333',
+  },
+  modalInfoContainer: {
+    width: '100%',
+    marginBottom: 25,
+  },
+  modalLabel: {
+    fontSize: 14,
+    color: '#888',
+    marginBottom: 5,
+    marginTop: 10,
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+  },
+  modalValue: {
+    fontSize: 18,
+    color: '#333',
+    fontWeight: '600',
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+    paddingBottom: 5,
+  },
+  logoutButton: {
+    backgroundColor: '#FF3B30', // System Red
+    paddingVertical: 15,
+    width: '100%',
+    borderRadius: 15,
+    alignItems: 'center',
+    marginTop: 10,
+    elevation: 3,
+  },
+  logoutButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  closeButton: {
+    marginTop: 15,
+    padding: 10,
+  },
+  closeButtonText: {
+    color: '#007AFF', // System Blue
+    fontSize: 16,
+    fontWeight: '600',
   }
 });
 
